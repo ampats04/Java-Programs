@@ -4,23 +4,26 @@ public class DigPow {
 
         int[] arr = new int[String.valueOf(n).length()];
         int index = arr.length - 1;
-
-        long result = -1;
         int sum = 0;
 
-        while (n > 0) {
+        for (int i = 0; i < index; i++, p++) {
+
             arr[index--] = n % 10;
             n /= 10;
 
-        }
-        for (; index > arr.length; index++) {
-            System.out.print(Math.pow(arr[index], p));
-            p++;
-            sum = arr[index];
+            sum = (int) Math.pow(arr[i], p);
 
-            System.out.print("asdasd");
+            if (sum == n) {
+                return n;
+            }
+
         }
-        System.out.print(Math.pow(arr[index], p));
+
+        for (int x : arr) {
+            System.out.print(x);
+        }
+        sum = (int) Math.pow(arr[0], p);
+        System.out.println(sum);
         return -1;
     }
 
