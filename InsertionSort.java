@@ -25,10 +25,17 @@ public class InsertionSort {
                  * 
                  */
 
-                arr[j + 1] = arr[j]; // if it is greater , assign th
-                j--;
+                arr[j + 1] = arr[j]; // assign the value of the larger element at position j to the element at
+                                     // position j + 1
+
+                j--; // decrement the j to ensure that we can continue comparing the key with
+                     // previous elements
             }
-            arr[j + 1] = key;
+            arr[j + 1] = key; /*
+                               * assigns the key (the current element being considered for insertion) to the
+                               * position immediately after shifting larger elements to the right, effectively
+                               * inserting the key into its correct position in the sorted subarray.
+                               */
 
         }
     }
@@ -46,10 +53,10 @@ public class InsertionSort {
 
         int arr[] = { 3, 1, 4, 6, 2, 5 };
 
-        // System.out.print("Hello world");
         System.out.print("Unsorted: ");
         printArray(arr);
         System.out.println();
+
         sort(arr);
 
         System.out.print("Sorted: ");
