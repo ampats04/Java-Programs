@@ -3,6 +3,8 @@ import java.util.Map;
 
 class hashSolution {
 
+    static int sum = 0;
+    static int a = 1;
     private static Map<Integer, String> choices = new HashMap<>();
 
     static {
@@ -11,6 +13,8 @@ class hashSolution {
         choices.put(2, "%s and %s like this");
         choices.put(3, "%s, %s and %s like this");
     }
+
+  
 
     public static String whoLikesIt(String... names) {
         int namesCount = names.length;
