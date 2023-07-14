@@ -1,12 +1,9 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class DeadFishnotMap {
 
     public static int[] parse(String data) {
 
         int len = data.length();
+        int count = 0;
         int sum = 0;
         int[] result = new int[len];
         int a = 1;
@@ -30,16 +27,23 @@ public class DeadFishnotMap {
                     break;
 
                 case 'o':
-                    result[i] = sum;
+                    result[count] = sum;
+                    count++;
                     break;
 
             }
         }
-
-        return result;
+        int[] finalResult = new int[count];
+        System.arraycopy(result, 0, finalResult, 0, count);
+        return finalResult;
     }
 
     public static void main(String... args) {
-        parse("iiisdoso");
+        int[] parsedData = parse("iiisdoso");
+
+        for (int num : parsedData) {
+            System.out.print(num + " ");
+        }
+
     }
 }
