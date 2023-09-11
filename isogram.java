@@ -19,7 +19,7 @@ public class isogram {
 
     public static void main(String... args) {
 
-        System.out.print(isIsogram(" "));
+        System.out.print(isIsogram("abc"));
 
     }
 }
