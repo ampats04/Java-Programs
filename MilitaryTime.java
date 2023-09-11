@@ -30,6 +30,8 @@ class Result {
     
     if(s.contains("PM") && hour!=12){
         hour+=12;
+    }else if(s.contains("AM") && hour == 12){
+        hour = 0;
     }
     
     String output = String.format("%02d:%02d:%02d",hour,min,second);
